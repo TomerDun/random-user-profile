@@ -2,7 +2,7 @@ export default class User {
     constructor() {
         this.name = null;
         this.quote = null;
-        this.state = null;
+        this.country = null;
         this.city = null;
     }
 }
