@@ -14,9 +14,6 @@ async function collectAllData() {
 async function updateUserData() {
     const [userInfo, friends, pokeData, summary, quote] = await collectAllData();
 
-    console.log(summary);
-    console.log(quote);
-
     // Update user info
     user.name = `${userInfo.name.first} ${userInfo.name.last}`
     user.country = userInfo.location.country;
@@ -27,3 +24,5 @@ async function updateUserData() {
     user.quote = quote;
     user.summary = summary;    
 }
+
+updateUserData().then(data => console.log(user))

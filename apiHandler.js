@@ -11,8 +11,9 @@ export async function getFriendsData(amount=6) {
     const url = 'https://randomuser.me/api/?results=' + amount; // Get 1 user
     const res = await fetch(url);
     if (!res.ok) throw Error (`Error retrieving random user from API (Code ${res.statusText})`);
-    let data = await res.json()
-    return data.results;
+    const data = await res.json()
+    const friendsData = formatFriends(data.results);
+    return friendsData;
 }
 
 // Random Quote
@@ -55,4 +56,8 @@ function formatPokemon(rawData) {
 
 function generatePokeId() {
     return Math.floor(Math.random() * 200);    
+}
+
+function formatFriends(friendsData) {
+    return friendsData.map(friend => `${friend.name.first} ${friend.name.last}`)
 }
