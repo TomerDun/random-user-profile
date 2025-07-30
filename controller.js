@@ -7,8 +7,5 @@ async function createUser() {
     const userData = await getUserData();
     user.name = `${userData.name.first} ${userData.name.last}`
     user.country = userData.location.country;
-    user.city = userData.location.city;
-    
-    console.log(user);
-    
+    user.city = userData.location.city;            
 }

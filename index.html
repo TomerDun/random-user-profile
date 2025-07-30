@@ -1,36 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+
 <body>
     <header>
-        <div class="user-info">
+        <div class="user-container">
             <div class="user-img-container">
-                
+                <img src="https://randomuser.me/api/portraits/men/71.jpg" alt="user-img" class="user-img">
             </div>
             <div class="user-info-container">
                 <h2 id="user-name">Name </h2>
-                <h3 id="user-location">Location</h3>
+                <h4 id="user-location">Location</h4>
                 <p id="quote">Kanye Quote</p>
             </div>
-            </div>
+        </div>
         </div>
     </header>
-    
-    <section class="about">
+
+    <section class="about-col">
         <div class="user-content-col">
             <div class="about-section">
-                <h3>About</h3>
+                <h3>About Me</h3>
+                <p>About content...</p>
+            </div>
+
+            <div class="about-section">
+                <h3>I live my life by this qute</h3>
+                <p>Quote content...</p>
+            </div>
+
+            <div class="about-section">
+                <h3>My hobbies</h3>
                 <p>About content...</p>
             </div>
         </div>
+    </section>
 
-        <div class="friends-col">
-            Friends and so on
+    <section class="friends-col">
+        <div class="friends-container">
+            <h3>My friends</h3>
         </div>
     </section>
 
@@ -38,4 +52,5 @@
 </body>
 
 <script type="module" src="controller.js"></script>
+
 </html>

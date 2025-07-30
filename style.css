@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    position: relative;
+    width: 100%;    
+    background: #54b5ff;
+    background: linear-gradient(90deg, rgba(84, 181, 255, 1) 0%, rgba(159, 197, 204, 1) 100%);
+}
+
+.user-container {
+    border: solid;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: auto;
+    align-items: center;    
+}
+
+.user-img-container {
+    border: 2px solid silver;
+    width: 10rem;   
+    height: 10rem;
+    border-radius: 50%;
+}
+
+.user-img-container > img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+#user-name {
+    /* display: inline-block; */
+}
+
+#user-location {
+    /* display: inline-block; */
+}
