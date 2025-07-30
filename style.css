@@ -21,10 +21,10 @@ header {
     left: 0;
     top: 0;
     width: 100%;
-    bottom: 60%;
+    bottom: 55%;
     background: #54b5ff;
     background: linear-gradient(90deg, rgba(84, 181, 255, 1) 0%, rgba(159, 197, 204, 1) 100%);
-    z-index: -50;
+    z-index: -10;
 }
 
 .user-container {
@@ -40,6 +40,7 @@ header {
     width: 10rem;
     height: 10rem;
     border-radius: 50%;
+    box-shadow: 3px 6px 25px -3px rgba(66, 68, 90, 1);
 }
 
 .user-img-container>img {
@@ -64,6 +65,9 @@ main {
 .friends-col {
     padding: 1rem;
     width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
 }
 
 .friends-container {
@@ -71,6 +75,7 @@ main {
     border: solid silver 2px;
     border-radius: 4px;
     padding: 1rem;
+    width: 70%;
 }
 
 .friends-container>ul {
@@ -79,9 +84,13 @@ main {
 }
 
 .friends-container>ul>li {
-    margin-bottom: 1rem;
-    padding-bottom: 4px;
+    margin-bottom: 1.5rem;
+    padding-bottom: 8px;
     border-bottom: 1px solid silver;
+}
+
+.friends-container>ul>li:last-child {
+    border: 0;
 }
 
 .about-section {
@@ -91,4 +100,17 @@ main {
 
 #quote-content {
     font-style: italic;
+}
+
+.poke-section {
+    border: 0;
+}
+
+.poke-content-container {
+    display: flex;
+    align-items: center;
+}
+
+.poke-ball {
+    margin-right: 1rem;
 }
