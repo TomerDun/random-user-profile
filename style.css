@@ -1,5 +1,5 @@
 html {
-    --bg-color: #fdfdfd;    
+    --bg-color: #fdfdfd;
     --text-content: '#9ea2a7';
     --text-head: '#000000';
 }
@@ -12,28 +12,37 @@ body {
 
 header {
     position: relative;
-    width: 100%;    
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+.banner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    bottom: 60%;
     background: #54b5ff;
     background: linear-gradient(90deg, rgba(84, 181, 255, 1) 0%, rgba(159, 197, 204, 1) 100%);
+    z-index: -50;
 }
 
 .user-container {
-    border: solid;
     display: flex;
     flex-direction: column;
-    /* width: 30%; */
     margin: auto;
-    align-items: center;    
+    align-items: center;
+    padding-top: 6rem;
 }
 
 .user-img-container {
     border: 2px solid silver;
-    width: 10rem;   
+    width: 10rem;
     height: 10rem;
     border-radius: 50%;
 }
 
-.user-img-container > img {
+.user-img-container>img {
     width: 100%;
     border-radius: 50%;
 }
@@ -48,10 +57,12 @@ main {
 }
 
 .about-col {
+    padding: 1rem;
     width: 60%;
 }
 
 .friends-col {
+    padding: 1rem;
     width: 40%;
 }
 
@@ -59,9 +70,25 @@ main {
     background-color: white;
     border: solid silver 2px;
     border-radius: 4px;
-    padding: 8px;
+    padding: 1rem;
 }
 
-.friends-container > ul {
+.friends-container>ul {
     list-style: none;
+    padding: 0;
+}
+
+.friends-container>ul>li {
+    margin-bottom: 1rem;
+    padding-bottom: 4px;
+    border-bottom: 1px solid silver;
+}
+
+.about-section {
+    padding: 3px;
+    border-bottom: 1px silver solid;
+}
+
+#quote-content {
+    font-style: italic;
 }
