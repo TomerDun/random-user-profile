@@ -34,9 +34,12 @@ export async function getSummary() {
 }
 
 export async function getPokemon() {
-    let url = 'https://pokeapi.co/api/v2/pokemon/';
+    let url = 'https://pokeapi.co/api/v2/pokemon/' + generatePokeId();
     const res = await fetch(url);
     if (!res.ok) throw Error (`Error retrieving Summary (Code ${res.statusText})`);
+    const data = await res.json();
+    const pokeData = formatPokemon(data);
+    return pokeData;
 }
 
 // Utils
@@ -54,4 +57,4 @@ function generatePokeId() {
     return Math.floor(Math.random() * 200);    
 }
 
-console.log(generatePokeId());
+getPokemon().then(console.log)
