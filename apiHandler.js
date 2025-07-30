@@ -33,4 +33,25 @@ export async function getSummary() {
     return data[0];
 }
 
-getSummary().then(console.log)
+export async function getPokemon() {
+    let url = 'https://pokeapi.co/api/v2/pokemon/';
+    const res = await fetch(url);
+    if (!res.ok) throw Error (`Error retrieving Summary (Code ${res.statusText})`);
+}
+
+// Utils
+
+function formatPokemon(rawData) {
+    const newPokemon = {
+        name: rawData.name,
+        img: rawData.sprites.front_default,
+        move: rawData.moves[0].move.name,
+    }
+    return newPokemon;
+}
+
+function generatePokeId() {
+    return Math.floor(Math.random() * 200);    
+}
+
+console.log(generatePokeId());
