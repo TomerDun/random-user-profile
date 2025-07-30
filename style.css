@@ -1,6 +1,11 @@
+html {
+    --bg-color: #fdfdfd;    
+}
+
 body {
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: var(--bg-color);
 }
 
 header {
@@ -36,5 +41,5 @@ header {
 }
 
 #user-location {
-    /* display: inline-block; */
+    color: #686c71;
 }
