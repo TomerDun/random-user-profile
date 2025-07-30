@@ -56,5 +56,3 @@ function formatPokemon(rawData) {
 function generatePokeId() {
     return Math.floor(Math.random() * 200);    
 }
-
-getPokemon().then(console.log)
