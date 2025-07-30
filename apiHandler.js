@@ -1,16 +1,16 @@
 // Random User API
-export async function getUserData() {    
+export async function getUserInfo() {
     const url = 'https://randomuser.me/api/'; // Get 1 user
     const res = await fetch(url);
-    if (!res.ok) throw Error (`Error retrieving random user from API (Code ${res.statusText})`);
+    if (!res.ok) throw Error(`Error retrieving random user from API (Code ${res.statusText})`);
     let data = await res.json()
-    return data.results[0];
+    return formatUserInfo(data.results[0]);
 }
 
-export async function getFriendsData(amount=6) {
+export async function getFriends(amount = 6) {
     const url = 'https://randomuser.me/api/?results=' + amount; // Get 1 user
     const res = await fetch(url);
-    if (!res.ok) throw Error (`Error retrieving random user from API (Code ${res.statusText})`);
+    if (!res.ok) throw Error(`Error retrieving random user from API (Code ${res.statusText})`);
     const data = await res.json()
     const friendsData = formatFriends(data.results);
     return friendsData;
@@ -20,7 +20,7 @@ export async function getFriendsData(amount=6) {
 export async function getQuote() {
     const url = 'https://api.kanye.rest';
     const res = await fetch(url);
-    if (!res.ok) throw Error (`Error retrieving random Quote (Code ${res.statusText})`);
+    if (!res.ok) throw Error(`Error retrieving random Quote (Code ${res.statusText})`);
     let data = await res.json()
     return data.quote;
 }
@@ -29,7 +29,7 @@ export async function getQuote() {
 export async function getSummary() {
     const url = 'https://baconipsum.com/api/?type=meat';
     const res = await fetch(url);
-    if (!res.ok) throw Error (`Error retrieving Summary (Code ${res.statusText})`);
+    if (!res.ok) throw Error(`Error retrieving Summary (Code ${res.statusText})`);
     let data = await res.json()
     return data[0];
 }
@@ -37,7 +37,7 @@ export async function getSummary() {
 export async function getPokemon() {
     let url = 'https://pokeapi.co/api/v2/pokemon/' + generatePokeId();
     const res = await fetch(url);
-    if (!res.ok) throw Error (`Error retrieving Summary (Code ${res.statusText})`);
+    if (!res.ok) throw Error(`Error retrieving Summary (Code ${res.statusText})`);
     const data = await res.json();
     const pokeData = formatPokemon(data);
     return pokeData;
@@ -55,9 +55,19 @@ function formatPokemon(rawData) {
 }
 
 function generatePokeId() {
-    return Math.floor(Math.random() * 200);    
+    return Math.floor(Math.random() * 200);
 }
 
 function formatFriends(friendsData) {
     return friendsData.map(friend => `${friend.name.first} ${friend.name.last}`)
+}
+
+function formatUserInfo(userData) {
+    const userInfo = {
+        name: `${userData.name.first} ${userData.name.last}`,
+        country: userData.location.country,
+        city: userData.location.city,
+        image: userData.picture.large
+    }
+    return userInfo;
 }
